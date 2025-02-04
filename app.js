@@ -30,7 +30,6 @@ Example: isAdult(21) should return 'Adult'.
 Complete the exercise in the space below:
 */
 
-
 function isAdult(age){
     if (age>=18){return 'Adult'}
     else {return 'Minor'}
@@ -60,8 +59,6 @@ if (char===vowels[i]){return true;}
     else {return false;}
 }}
 
-
-
 console.log('Exercise 3 Result:', isCharAVowel("b"));
 
 //================================================================================
@@ -85,8 +82,6 @@ return `${name}@${domain}`
 
 console.log('Exercise 4 Result:', generateEmail("johnsmith", "example.com"));
 
-
-
 //==============================================================================
 /*
 Exercise 5: greetUser()
@@ -102,9 +97,6 @@ Complete the exercise in the space below:
 function greetUser(name,timeOfDay){
     return `Good ${timeOfDay}, ${name}`;
 }
-
-
-
 
 console.log('Exercise 5 Result:', greetUser("Sam", "morning"));
 
@@ -129,8 +121,6 @@ function maxOfThree(n1,n2,n3){
     return temp;
 }
 
-
-
 console.log('Exercise 6 Result:', maxOfThree(5, 10, 8));
 
 
@@ -153,8 +143,6 @@ return (amount*(percentage*.01))
 
 }
 
-
-
 console.log('Exercise 7 Result:', calculateTip(50, 20));
 
 //=====================================================================
@@ -175,7 +163,6 @@ Complete the exercise in the space below:
 function convertTemperature(temp,type){
 if(type==='C'){return `${(temp * 9/5 + 32)}`}
 else{return `${((temp - 32) * 5/9)}`;}
-
 }
 
 console.log('Exercise 8 Result:', convertTemperature(32, "C"));
@@ -207,11 +194,76 @@ function basicCalculator(x,y,op){
     else if(op==="divide"){return x/y;}
 }
 
-
-
 console.log('Exercise 9 Result:', basicCalculator(10, 5, "subtract"));
 
 
+//=========================================================
 
+/*
+Exercise 10: calculateGrade()
 
+Define a function called calculateGrade. 
+It should take a numerical score and return the corresponding letter 
+grade (A, B, C, D, F). 
 
+For example, 90 and above yields an 'A', 80-89 is a 'B', 
+and 70-79 is a 'C', 60-69 is a 'D' and anything lower than a 60 is an 'F'.
+
+Example: calculateGrade(100) should return A.
+
+Complete the exercise in the space below:
+*/
+
+function calculateGrade(numGrade){
+  let grade='F';
+  const nGrades=[90,80,70,60];
+  const alphGrades=['A','B','C','D'];
+  for (i=0;i<=nGrades.length;i++){
+    if(numGrade>nGrades[i]){
+        grade=alphGrades[i];
+      break;
+    }
+  }
+return grade;
+}
+
+console.log('Exercise 10 Result:', calculateGrade(85));
+
+//===============================================================
+/*
+Exercise 11: createUsername()
+
+Define a function called createUsername. 
+It should take a first name and a last name and return a username. 
+
+The username should be a combination of the following:
+- The first three letters of the first name.
+- The first three letters of the last name.
+- The total character count of the first and last name combined.
+
+Example: createUsername('Samantha', 'Green') should return 'SamGre13'.
+
+Complete the exercise in the space below:
+*/
+
+function createUsername(first,last){
+  return (first.substr(0,3)+last.substr(0,3)+(first+last).length);
+
+}
+
+console.log('Exercise 11 Result:', createUsername("Samantha", "Green"));
+
+//=============================================================
+
+/*
+Exercise 12: numArgs()
+
+Challenge yourself with numArgs. 
+This function should return the count of arguments passed to it when called.
+
+Complete the exercise in the space below:
+*/
+
+let count;
+function numArgs(...count){return count.length;}
+console.log('Exercise 12 Result:', numArgs(1, 2, 3, 4));
